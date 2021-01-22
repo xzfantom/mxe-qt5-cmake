@@ -37,13 +37,13 @@ RUN apt update && \
         xz-utils \
         libqt5svg5* \
         zlib1g-dev && \
-    ################################################
-    # Cross compile Qt5 using MXE 64 bits (shared) #
-    ################################################
+    ###################################################
+    # Cross compile Qt5 using MXE 32/64 bits (shared) #
+    ###################################################
     cd /opt && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
-    make MXE_TARGETS='x86_64-w64-mingw32.shared' qt5 qtsvg nsis && \
+    make MXE_TARGETS='x86_64-w64-mingw32.shared, i686-w64-mingw32.shared' qt5 qtsvg nsis && \
     ################
     # Fix symlinks #
     ################
