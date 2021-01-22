@@ -43,12 +43,12 @@ RUN apt update && \
     cd /opt && \
     git clone https://github.com/mxe/mxe.git && \
     cd mxe && \
-    make MXE_TARGETS='i686-w64-mingw32.shared x86_64-w64-mingw32.shared' qt5 qtsvg nsis && \
+    make MXE_TARGETS='i686-w64-mingw32.shared x86_64-w64-mingw32.shared' qt5 nsis xerces qtifw && \
     ################
     # Fix symlinks #
     ################
-    #ln -sf /opt/mxe/usr/bin/x86_64-w64-mingw32.shared-gcc /opt/mxe/usr/x86_64-pc-linux-gnu/bin/x86_64-w64-mingw32.shared-gcc && \
-    #ln -sf /opt/mxe/usr/bin/x86_64-w64-mingw32.shared-g++ /opt/mxe/usr/x86_64-pc-linux-gnu/bin/x86_64-w64-mingw32.shared-g++ && \
+    ln -sf /opt/mxe/usr/bin/x86_64-w64-mingw32.shared-gcc /opt/mxe/usr/x86_64-pc-linux-gnu/bin/x86_64-w64-mingw32.shared-gcc && \
+    ln -sf /opt/mxe/usr/bin/x86_64-w64-mingw32.shared-g++ /opt/mxe/usr/x86_64-pc-linux-gnu/bin/x86_64-w64-mingw32.shared-g++ && \
     ###########
     # Cleanup #
     ###########
